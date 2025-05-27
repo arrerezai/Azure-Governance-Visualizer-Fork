@@ -170,7 +170,7 @@
 .Parameter ALZPolicyAssignmentsChecker
     'Azure Landing Zones (ALZ) Policy Assignments Checker' for Policy and Set assignments. Azure Governance Visualizer will clone the ALZ Library GitHub repository and collect the standard ALZ policy and set assignments. The ALZ data will be compared with the data from your tenant so that you can get an inventory for ALZ policy and set assignments that already exist in your tenant and compare with the standard assignments of ALZ. The 'Azure Landing Zones (ALZ) Policy Assignments Checker' results will be displayed in the TenantSummary.
     If you do want to execute the 'Azure Landing Zones (ALZ) Policy Version Checker' feature then use this parameter
-    PS C:\>.\AzGovVizParallel.ps1 -ManagementGroupId <your-Management-Group-Id> -NoALZPolicyVersionChecker
+    PS C:\>.\AzGovVizParallel.ps1 -ManagementGroupId <your-Management-Group-Id> -ALZPolicyAssignmentsChecker
 
 .Parameter ALZManagementGroupsIds
     'Azure Landing Zones (ALZ) Management groups Ids'. This is the list of Ids of the ALZ management groups hierarchy.
@@ -184,7 +184,7 @@
         landing_zones  = '<Landing_zones management group Id>'
         corp           = '<Corp management group Id>'
         online         = '<Online management group Id>'
-        sandboxes      = '<Sandboxes management group Id>'
+        sandbox        = '<Sandbox management group Id>'
         decommissioned = '<Decommissioned management group Id>'
     }
 
@@ -372,7 +372,7 @@
         landing_zones  = '<Landing_zones management group Id>'
         corp           = '<Corp management group Id>'
         online         = '<Online management group Id>'
-        sandboxes      = '<Sandboxes management group Id>'
+        sandbox        = '<Sandbox management group Id>'
         decommissioned = '<Decommissioned management group Id>'
     }
 
@@ -406,7 +406,7 @@ Param
     $Product = 'AzGovViz',
 
     [string]
-    $ProductVersion = '6.7.0',
+    $ProductVersion = '6.7.2',
 
     [string]
     $GithubRepository = 'aka.ms/AzGovViz',
@@ -416,7 +416,7 @@ Param
     [ValidateSet('AzAPICall', 'AzAPICallBeta')]$AzAPICallModuleName = 'AzAPICall',
 
     [string]
-    $AzAPICallVersion = '1.2.4',
+    $AzAPICallVersion = '1.4.1',
 
     [switch]
     $DebugAzAPICall,
@@ -617,7 +617,7 @@ Param
         landing_zones  = '<Landing_zones management group Id>'
         corp           = '<Corp management group Id>'
         online         = '<Online management group Id>'
-        sandboxes      = '<Sandboxes management group Id>'
+        sandbox        = '<Sandbox management group Id>'
         decommissioned = '<Decommissioned management group Id>'
     }#>,
 
